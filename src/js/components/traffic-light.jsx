@@ -29,7 +29,7 @@ export default function TrafficLight() {
             </div>
             <div className='row d-flex justify-content-center'>
                 <div className='col-4 bg-dark'>
-                    <div class='d-flex flex-column justify-content-center align-items-center'>
+                    <div className='d-flex flex-column justify-content-center align-items-center my-5'>
                         {lights.map(light => <Light key={light.key} color={light.color} isActive={activeLightKey === light.key} onClick={() => handleClick(light.key)}/>)}
                     </div>
                 </div>
