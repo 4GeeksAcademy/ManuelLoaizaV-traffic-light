@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Light from './light';
 
 // TODO:
@@ -9,15 +9,7 @@ import Light from './light';
 // JSX elements directly inside a map() call always need keys!
 // See https://react.dev/learn/rendering-lists
 
-export default function TrafficLight() {
-    const [activeLightKey, setActiveLightKey] = useState(0);
-
-    const lights = [
-        { key: 0, color: 'danger' },
-        { key: 1, color: 'warning'},
-        { key: 2, color: 'success' }
-    ];
-
+export default function TrafficLight({ activeLightKey, lights, setActiveLightKey }) {
     function handleClick(lightKey) {
         setActiveLightKey(lightKey);
     };
@@ -28,7 +20,7 @@ export default function TrafficLight() {
                 <div className='col-1 bg-dark' style={{ width: '50px', height: '200px' }}></div>
             </div>
             <div className='row d-flex justify-content-center'>
-                <div className='col-4 bg-dark'>
+                <div className='col-3 bg-dark mb-5' style={{ minWidth: '300px' }}>
                     <div className='d-flex flex-column justify-content-center align-items-center my-5'>
                         {lights.map(light => <Light key={light.key} color={light.color} isActive={activeLightKey === light.key} onClick={() => handleClick(light.key)}/>)}
                     </div>
