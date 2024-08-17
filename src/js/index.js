@@ -1,9 +1,9 @@
 import "../styles/index.css";
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import TrafficLight from "./components/traffic-light";
+import App from "./components/app";
 
 const domNode = document.getElementById('app');
 const root = createRoot(domNode);
-root.render(<TrafficLight/>);
+root.render(<App />);
 
